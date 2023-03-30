@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {  Router } from '@angular/router';
+import { CursoService } from './service/curso.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rutas-aplicacion';
+  constructor(private curso:CursoService){
+
+  }
+  getTotal(){
+    return this.curso.estudiantes.length;
+  }
+
 }

@@ -1,0 +1,11 @@
+<div *ngIf="estudiantes.length > 0; else sinElementos">
+  <div *ngFor="let item of estudiantes; let i = index">
+    <app-estudiante [persona]="item" [index]="i"></app-estudiante>
+  </div>
+</div>
+<ng-template #sinElementos>
+  <div class="alert alert-primary" role="alert">
+    <strong>Lista sin personas</strong><br>
+    Puede añadir personas  en (+)
+  </div>
+</ng-template>

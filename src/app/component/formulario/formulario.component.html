@@ -1,0 +1,27 @@
+<div class="container form-control">
+  <input
+    type="text"
+    name="nombre"
+    id="nombre"
+    placeholder="nombre"
+    [(ngModel)]="nombre"
+  />
+  <input
+    type="text"
+    name="apellido"
+    id="apellido"
+    placeholder="apellido"
+    [(ngModel)]="apellido"
+  />
+  <button
+    class="btn btn-primary"
+    (click)="insert()"
+    *ngIf="id === undefined; else prueba"
+  >
+    Agregar
+  </button>
+  <ng-template #prueba>
+    <button class="btn btn-primary" (click)="update()"><i class="fa fa-save"></i></button>
+    <button class="btn btn-danger" (click)="delete()"><i class="fa fa-trash"></i></button>
+  </ng-template>
+</div>
